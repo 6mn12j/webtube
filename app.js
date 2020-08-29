@@ -20,7 +20,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true})); //form
 app.use(morgan("dev"));
 
-
 app.use(localsMiddleware)
 
 app.use(routes.home, globalRouter);
