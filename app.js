@@ -17,7 +17,8 @@ app.use(helmet());
 app.set("view engine","pug") //view 엔진을 pug 확장자로 정해준다.
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : true})); //form
+app.use(bodyParser.urlencoded({extended : true})); 
+//form
 app.use(morgan("dev"));
 
 app.use(localsMiddleware)
