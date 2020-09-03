@@ -17,18 +17,18 @@ export const search = (req, res) => {
 
 //export const videos =(req,res) =>res.render("Videos",{pageTitle: "Videos"});
 
-export const getUpload =(req,res) =>res.render("upload",{pageTitle: "Upload"});
-export const postUpload =(req,res) =>{
-    cosnt ={
+export const getUpload = (req,res) =>res.render("upload", {pageTitle: "Upload"});
+export const postUpload = (req,res) =>{
+    cosnt = {
         body:{file,title,description}
         } = req;
         //To Do:Upload and save video
         res.redirect(routes.videoDetail(324393));
     };
 
-export const videoDetail =(req,res) =>res.render("videoDetail",{pageTitle:"Video Detail"});
+export const videoDetail = (req,res) =>res.render("videoDetail", {pageTitle:"Video Detail"});
 
-export const editVideo =(req,res) =>res.render("edit Video",{pageTitle: "Edit Video"});
+export const editVideo = (req,res) =>res.render("edit Video", {pageTitle: "Edit Video"});
 
-export const deleteVideo =(req,res) =>res.render("deleteVideo",{pageTitle: "Delete Video"});
+export const deleteVideo = (req,res) =>res.render("deleteVideo", {pageTitle: "Delete Video"});
 
