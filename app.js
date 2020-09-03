@@ -13,7 +13,7 @@ import routes from "./routes"
 const app = express(); //app변수에 express를 실행
 
 //middleware
-app.use(helmet());
+app.use( helmet({ contentSecurityPolicy: false, }));
 app.set("view engine","pug") //view 엔진을 pug 확장자로 정해준다.
 app.use(cookieParser());
 app.use(bodyParser.json());
