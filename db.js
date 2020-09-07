@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
-
+import dotenv from "dotenv";
+dotenv.config(); //process.env.key 에 .env 파일들이 저장됨.
 mongoose.connect(
-  "mongodb://localhost:27017/wetube",
+  process.env.MONG_URL,
     {
     userNewUrlParser: true,
     userFindAndMotify: false
