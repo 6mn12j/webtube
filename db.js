@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config(); //process.env.key 에 .env 파일들이 저장됨.
 mongoose.connect(
-  process.env.MONG_URL,
+  process.env.MONGO_URL,
     {
     userNewUrlParser: true,
     userFindAndMotify: false

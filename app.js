@@ -4,10 +4,11 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { localsMiddleware } from "./middlewares";
+import routes from "./routes"
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
-import routes from "./routes"
+
 //import는 알파벳 순으로 
 
 const app = express(); //app변수에 express를 실행
