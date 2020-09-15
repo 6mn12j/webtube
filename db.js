@@ -4,8 +4,8 @@ dotenv.config(); //process.env.key 에 .env 파일들이 저장됨.
 mongoose.connect(
   process.env.MONGO_URL,
     {
-    userNewUrlParser: true,
-    userFindAndMotify: false
+    useNewUrlParser: true,
+    useFindAndModify: false
     }
   );
 
@@ -15,3 +15,5 @@ mongoose.connect(
   const handleError = (error) => console.log(`❌ Error on DB Connection:${error}`)
   db.once("open",handleOpen);
   db.on("error",handleError);
+
+
