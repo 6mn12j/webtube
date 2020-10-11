@@ -8,7 +8,7 @@ import {
         getEditVideo,
         postEditVideo
  } from "../controllers/videoController";
-import { onlyPrivate, onlyPublic, uploadVideo} from "../middlewares";
+import { onlyPrivate, uploadVideo} from "../middlewares";
 
 const videoRouter = express.Router();
 
