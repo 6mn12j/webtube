@@ -7,7 +7,7 @@ export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
   //fake login info
-  res.locals.user = req.user || null;
+  res.locals.loggedUser = req.user || null;
   console.log(req.user);
   next();
 };
