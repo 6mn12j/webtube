@@ -84,7 +84,7 @@ export const userDetail = async (req, res) =>{
     prams: { id }
   } = req;
   try{
-      const user = await User.findById(id);
+      const user = await (await User.findById(id)).populated("videos");
       res.render("userDetail", { pageTitle: "User Detail", user});
     }catch(error){
       res.redirect(routes.home);
