@@ -1,6 +1,8 @@
 import routes from "../routes";
 import Video from "../models/Video";
-import Comment from"../models/Comment";
+import Comment from "../models/Comment";
+
+//Home
 
 export const home = async (req, res) => {
   try {
@@ -11,6 +13,8 @@ export const home = async (req, res) => {
     res.render("home", { pageTitle: " Home", videos: [] });
   }
 };
+
+//Search
 
 export const search = async (req, res) => {
   const {
@@ -28,6 +32,8 @@ export const search = async (req, res) => {
 };
 
 //export const videos =(req,res) =>res.render("Videos",{pageTitle: "Videos"});
+
+//Upload
 
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
@@ -48,6 +54,8 @@ export const postUpload = async (req, res) => {
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
+//Video Detail
+
 export const videoDetail = async (req, res) => {
   const {
     params: { id }
@@ -62,9 +70,11 @@ export const videoDetail = async (req, res) => {
   }
 };
 
+// Edit Video
+
 export const getEditVideo = async (req, res) => {
   const {
-    params: { id },
+    params: { id }
   } = req;
   try {
     const video = await Video.findById(id);
@@ -113,8 +123,8 @@ export const deleteVideo = async (req, res) => {
 // Register Video View
 export const postRegisterView = async(req, res) =>{
   const{
-    params:{id}
-  }= req;
+    params:{ id }
+  } = req;
   try{
     const video = await Video.findById(id);
     video.views += 1;
@@ -122,8 +132,6 @@ export const postRegisterView = async(req, res) =>{
     res.status(200);
   } catch(error){
     res.status(400);
-    console.log(error);
-    res.end();
   } finally{
     res.end();
   }
@@ -136,7 +144,7 @@ export const postAddComment = async(req,res)=>{
     params:{id},
     body:{comment},
     user
-  }= req;
+  } = req;
   try{
     const video = await Video.findById(id);
     const newComment = await Comment.create({
@@ -148,7 +156,7 @@ export const postAddComment = async(req,res)=>{
   } catch(error){
     res.status(400);
   }
-  finally{
-    res.end()
+    finally{
+    res.end();
   }
-}
+};

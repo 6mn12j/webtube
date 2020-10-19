@@ -10,12 +10,12 @@ const volumeRange = document.getElementById("jsVolume");
 
 
 
-const registerView=()=>{
+const registerView = () => {
     const videoId = window.location.href.split("/videos/")[1];
-    fetch(`/api/${videoId}/view` , {
-        method: "POST"
-    });
-} 
+  fetch(`/api/${videoId}/view`, {
+    method: "POST"
+  });
+};
 
 
 function handlePlayClick(){
@@ -79,11 +79,15 @@ function setTotalTime(){
     totalTime.innerHTML = totalTimeString;
     setInterval(getCurrentTime, 1000);
 }
+
+
 function handleEnded(){
     registerView();
     videoPlayer.currentime=0;
     playBtn.innerHTML = '<i class="fas fa-play"></i>';
 }
+
+
 function handleDrag(event){
    // console.log(event.target);
     //console.log(event.target.value);
