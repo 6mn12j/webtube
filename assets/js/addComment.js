@@ -3,12 +3,11 @@ const addCommentForm = document.getElementById("jsAddComment");
 
 const sendComment = async (comment) =>{
     const videoId = window.location.href.split("/videos/")[1];
-    const response =await 
-    axios({
+    const response = await axios({
         url:`/api/${videoId}/comment`,
         method:"POST",
         data:{
-            comment:comment
+            comment
         }
     });
     console.log(response);
@@ -24,7 +23,7 @@ const handleSubmint = (event) =>{
 
 } 
 function init(){
-addCommentForm.addEventListener("submit",handleSubmint);
+    addCommentForm.addEventListener("submit",handleSubmint);
 }
 
 
