@@ -65,9 +65,11 @@ export const videoDetail = async (req, res) => {
     .populate("creator")
     .populate("comments");
     res.render("videoDetail", { pageTitle: video.title, video });
+
   } catch (error) {
     res.redirect(routes.home);
   }
+  
 };
 
 // Edit Video
@@ -152,6 +154,7 @@ export const postAddComment = async(req,res)=>{
       creator:user.id
     });
     video.comments.push(newComment.id);
+
     video.save();
   } catch(error){
     res.status(400);
