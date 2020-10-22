@@ -40,7 +40,9 @@
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore '.scss' --ignore 'static' ",
     "dev:assets": "cross-env WEBPACK_ENV=development webpack -w",
-    "build:assets": "WEBPACK_ENV=production webpack"
+    "build:assets": "WEBPACK_ENV=production webpack",
+    "build:server" : "babel src --out-dir build",
+    "build":"npm run build:server && npm run build:assets"
   },
   "devDependencies": {
     "eslint": "^7.9.0",
