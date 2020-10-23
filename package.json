@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "6mn12j",
   "dependencies": {
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/node": "^7.12.1",
     "@babel/polyfill": "^7.11.5",
@@ -46,7 +47,8 @@
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "copyAll": "xcopy \"src/static\" \"build/static\" /I /E /Y && xcopy \"src/views\" \"build/views\" /I /E /Y ",
     "prebuild": "rd /s \"build\"",
-    "start": "node build/init.js"
+    "start": "node build/init.js",
+    "prestart": "npm run build"
   },
   "devDependencies": {
     "eslint": "^7.9.0",
