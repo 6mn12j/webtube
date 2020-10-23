@@ -45,8 +45,8 @@
     "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
     "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "copyAll": "xcopy \"src/static\" \"build/static\" /I /E /Y && xcopy \"src/views\" \"build/views\" /I /E /Y ",
-    "prebuild": "rd /s /q build",
+    "copyAll": "shx cp -R src/static build && cp -R src/views build",
+    "prebuild": "shx rm -rf build",
     "start": "PRODUCTION=true node build/init.js",
     "prestart": "npm run build"
   },
@@ -58,6 +58,7 @@
     "mini-css-extract-plugin": "^0.11.3",
     "nodemon": "^2.0.4",
     "postcss": "^8.1.1",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "shx": "^0.3.2"
   }
 }
