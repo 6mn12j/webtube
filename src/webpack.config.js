@@ -46,6 +46,7 @@ const config = {
   output: {
     path: OUTPUT_DIR,
     filename: "[name].js",
+    publicPath: "/static/react/dist/"
   },
   plugins: [new ExtractCSS("styles.css")],
 };
